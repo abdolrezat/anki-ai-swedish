@@ -1,0 +1,647 @@
+{
+    "Status": "found",
+    "Wordbase": "LSL4",
+    "Result": [
+        {
+            "Value": "går",
+            "VariantID": "6519, 6520, 6521, 6522, 6523",
+            "ID": "1053325",
+            "Variant": "2",
+            "Phonetic": [
+                {
+                    "File": "http://lexin.nada.kth.se/sound/v2/176696_1.mp3",
+                    "Content": "gå:r"
+                }
+            ],
+            "Type": "verb",
+            "Inflection": [
+                {
+                    "Spec": "att",
+                    "Form": "infinitiv",
+                    "Content": "gå"
+                },
+                {
+                    "Form": "imperfekt",
+                    "Content": "gick"
+                },
+                {
+                    "Spec": "har",
+                    "Form": "supinum",
+                    "Content": "gått"
+                },
+                {
+                    "Spec": "är",
+                    "Form": "perf.part.",
+                    "Content": "gången"
+                },
+                {
+                    "Spec": "!",
+                    "Form": "imperativ",
+                    "Content": "gå"
+                }
+            ],
+            "Lexeme": [
+                {
+                    "VariantID": "6519",
+                    "ID": "7495",
+                    "Lexemeno": "1",
+                    "Definition": {
+                        "Content": "förflyttar sig till fots (utan att springa)",
+                        "ID": "9018306"
+                    },
+                    "Reference": [
+                        {
+                            "Type": "animation",
+                            "Value": "http://lexin.nada.kth.se/lang/lexinanim/gar.mp4"
+                        },
+                        {
+                            "Type": "animation",
+                            "Value": "http://lexin.nada.kth.se/lang/lexinanim/gar_over_gatan.mp4"
+                        }
+                    ],
+                    "Example": [
+                        {
+                            "ID": "1053336",
+                            "Content": "han går 3 kilometer varje dag"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "ID": "1053334-1",
+                            "Order": "1",
+                            "Content": "ngn/ngt går (RIKTNING)"
+                        }
+                    ],
+                    "Cycle": [
+                        {
+                            "CycleID": "2002097",
+                            "Comment": {
+                                "ID": "2002098",
+                                "Type": "general",
+                                "Content": "även"
+                            },
+                            "Definition": {
+                                "Content": "avlägsnar sig",
+                                "ID": "2002099"
+                            },
+                            "Example": [
+                                {
+                                    "ID": "1053338",
+                                    "Content": "Klockan är mycket, vi måste gå!"
+                                }
+                            ],
+                            "Graminfo": [
+                                {
+                                    "ID": "8010733-1",
+                                    "Order": "1",
+                                    "Content": "ngn går"
+                                }
+                            ]
+                        },
+                        {
+                            "CycleID": "2002101",
+                            "Comment": {
+                                "ID": "2002102",
+                                "Type": "general",
+                                "Content": "även abstrakt"
+                            },
+                            "Example": [
+                                {
+                                    "ID": "1053337",
+                                    "Content": "tiden går fort när man har trevligt"
+                                }
+                            ],
+                            "Graminfo": [
+                                {
+                                    "ID": "8010734-1",
+                                    "Order": "1",
+                                    "Content": "ngt går"
+                                }
+                            ]
+                        }
+                    ],
+                    "Idioms": [
+                        {
+                            "ID": "8029595",
+                            "Content": "det knallar och går",
+                            "Definition": {
+                                "Content": "det går hyggligt (ofta som svar på frågan \"Hur är det?\")",
+                                "ID": "8029594"
+                            }
+                        },
+                        {
+                            "ID": "1053339",
+                            "Content": "går av stapeln",
+                            "Definition": {
+                                "Content": "äger rum, börjar",
+                                "ID": "1053340"
+                            }
+                        },
+                        {
+                            "ID": "1053341",
+                            "Content": "går bakom ryggen på någon",
+                            "Definition": {
+                                "Content": "gör något som någon annan inte vet om",
+                                "ID": "1053342"
+                            }
+                        },
+                        {
+                            "ID": "1053343",
+                            "Content": "går dit näsan pekar",
+                            "Definition": {
+                                "Content": "går rakt fram",
+                                "ID": "1053344"
+                            }
+                        },
+                        {
+                            "ID": "1053345",
+                            "Content": "går från klarhet till klarhet",
+                            "Definition": {
+                                "Content": "blir bättre och bättre",
+                                "ID": "1053346"
+                            }
+                        },
+                        {
+                            "ID": "1053347",
+                            "Content": "går husesyn",
+                            "Definition": {
+                                "Content": "vandrar runt i ett hus (ofta för att kontrollera kvaliteten)",
+                                "ID": "1053348"
+                            }
+                        },
+                        {
+                            "ID": "2004087",
+                            "Content": "går i arv",
+                            "Definition": {
+                                "Content": "ärvs",
+                                "ID": "2004086"
+                            }
+                        },
+                        {
+                            "ID": "2004181",
+                            "Content": "går i bräschen för något",
+                            "Definition": {
+                                "Content": "främjar något",
+                                "ID": "2004180"
+                            }
+                        },
+                        {
+                            "ID": "8033080",
+                            "Content": "går i kras",
+                            "Definition": {
+                                "Content": "går sönder",
+                                "ID": "8033079"
+                            }
+                        },
+                        {
+                            "ID": "2004316",
+                            "Content": "går i land med (en uppgift)",
+                            "Definition": {
+                                "Content": "klarar (en uppgift)",
+                                "ID": "2004315"
+                            }
+                        },
+                        {
+                            "ID": "2004409",
+                            "Content": "går i land med (något)",
+                            "Definition": {
+                                "Content": "klarar (något)",
+                                "ID": "2004408"
+                            }
+                        },
+                        {
+                            "ID": "2004583",
+                            "Content": "går i lås",
+                            "Definition": {
+                                "Content": "lyckas",
+                                "ID": "2004582"
+                            }
+                        },
+                        {
+                            "ID": "2004626",
+                            "Content": "går i pension",
+                            "Definition": {
+                                "Content": "slutar sitt arbete på grund av ålder (ofta 65 eller 67 år)",
+                                "ID": "2004625"
+                            }
+                        },
+                        {
+                            "ID": "2004847",
+                            "Content": "går i spetsen",
+                            "Definition": {
+                                "Content": "går först, leder",
+                                "ID": "2004846"
+                            }
+                        },
+                        {
+                            "ID": "2004934",
+                            "Content": "går i strumplästen",
+                            "Definition": {
+                                "Content": "går i enbart strumpor",
+                                "ID": "2004933"
+                            }
+                        },
+                        {
+                            "ID": "2004964",
+                            "Content": "går i stöpet",
+                            "Definition": {
+                                "Content": "misslyckas",
+                                "ID": "2004963"
+                            }
+                        },
+                        {
+                            "ID": "2005277",
+                            "Content": "går i svaromål",
+                            "Definition": {
+                                "Content": "besvarar kritik",
+                                "ID": "2005276"
+                            }
+                        },
+                        {
+                            "ID": "2005491",
+                            "Content": "går i tusen bitar",
+                            "Definition": {
+                                "Content": "går sönder helt, blir förstörd",
+                                "ID": "2005490"
+                            }
+                        },
+                        {
+                            "ID": "2005583",
+                            "Content": "går med håven",
+                            "Definition": {
+                                "Content": "visar att man vill ha beröm",
+                                "ID": "2005582"
+                            }
+                        },
+                        {
+                            "ID": "2005594",
+                            "Content": "går miste om något",
+                            "Definition": {
+                                "Content": "får inte något",
+                                "ID": "2005593"
+                            }
+                        },
+                        {
+                            "ID": "2005598",
+                            "Content": "går om intet",
+                            "Definition": {
+                                "Content": "går förlorad; blir inte av",
+                                "ID": "2005597"
+                            }
+                        },
+                        {
+                            "ID": "7503012",
+                            "Content": "går omkull",
+                            "Definition": {
+                                "Content": "upphör att existera, går under",
+                                "ID": "7503011"
+                            }
+                        },
+                        {
+                            "ID": "2005774",
+                            "Content": "går på djupet med något",
+                            "Definition": {
+                                "Content": "går igenom något grundligt",
+                                "ID": "2005773"
+                            }
+                        },
+                        {
+                            "ID": "2005839",
+                            "Content": "går på ett ut",
+                            "Definition": {
+                                "Content": "spelar ingen roll, kvittar",
+                                "ID": "2005838"
+                            }
+                        },
+                        {
+                            "ID": "7503151",
+                            "Content": "går på gatan",
+                            "Definition": {
+                                "Content": "är prostituerad",
+                                "ID": "7503150"
+                            }
+                        },
+                        {
+                            "ID": "2005964",
+                            "Content": "går på känsla",
+                            "Definition": {
+                                "Content": "använder enbart intuitionen",
+                                "ID": "2005963"
+                            }
+                        },
+                        {
+                            "ID": "2005968",
+                            "Content": "går på någons linje",
+                            "Definition": {
+                                "Content": "följer någons rekommendationer",
+                                "ID": "2005967"
+                            }
+                        },
+                        {
+                            "ID": "7503277",
+                            "Content": "går på tok",
+                            "Definition": {
+                                "Content": "misslyckas helt, går illa",
+                                "ID": "7503276"
+                            }
+                        },
+                        {
+                            "ID": "2006055",
+                            "Content": "går rakt på sak",
+                            "Definition": {
+                                "Content": "är helt uppriktig",
+                                "ID": "2006054"
+                            }
+                        },
+                        {
+                            "ID": "2006061",
+                            "Content": "går sin gilla gång",
+                            "Definition": {
+                                "Content": "fortgår som vanligt",
+                                "ID": "2006060"
+                            }
+                        },
+                        {
+                            "ID": "2006093",
+                            "Content": "går snett",
+                            "Definition": {
+                                "Content": "blir fel, misslyckas",
+                                "ID": "2006092"
+                            }
+                        },
+                        {
+                            "ID": "2006095",
+                            "Content": "går som katten kring het gröt",
+                            "Definition": {
+                                "Content": "vågar inte säga sitt ärende direkt",
+                                "ID": "2006094"
+                            }
+                        },
+                        {
+                            "ID": "2006117",
+                            "Content": "går sönder",
+                            "Definition": {
+                                "Content": "blir trasig",
+                                "ID": "2006116"
+                            }
+                        },
+                        {
+                            "ID": "7503307",
+                            "Content": "går till de sälla jaktmarkerna",
+                            "Definition": {
+                                "Content": "dör",
+                                "ID": "7503306"
+                            }
+                        },
+                        {
+                            "ID": "7503382",
+                            "Content": "går till det sociala",
+                            "Definition": {
+                                "Content": "begär ekonomisk hjälp av samhället",
+                                "ID": "7503381"
+                            }
+                        },
+                        {
+                            "ID": "2006137",
+                            "Content": "går till fots",
+                            "Definition": {
+                                "Content": "promenerar",
+                                "ID": "2006136"
+                            }
+                        },
+                        {
+                            "ID": "2006149",
+                            "Content": "går till spillo",
+                            "Definition": {
+                                "Content": "går förlorad",
+                                "ID": "2006148"
+                            }
+                        },
+                        {
+                            "ID": "2006199",
+                            "Content": "går till storms mot någon/något",
+                            "Definition": {
+                                "Content": "angriper någon/något häftigt",
+                                "ID": "2006198"
+                            }
+                        },
+                        {
+                            "ID": "2006209",
+                            "Content": "går till ytterligheter",
+                            "Definition": {
+                                "Content": "går för långt, använder extrema metoder",
+                                "ID": "2006208"
+                            }
+                        },
+                        {
+                            "ID": "2006237",
+                            "Content": "går undan",
+                            "Definition": {
+                                "Content": "går fort",
+                                "ID": "2006236"
+                            }
+                        },
+                        {
+                            "ID": "2006271",
+                            "Content": "går vidare",
+                            "Definition": {
+                                "Content": "fortsätter",
+                                "ID": "2006270"
+                            }
+                        },
+                        {
+                            "ID": "2004696",
+                            "Content": "går vilse",
+                            "Definition": {
+                                "Content": "tappar orienteringen, vet inte var man är",
+                                "ID": "2004695"
+                            }
+                        },
+                        {
+                            "ID": "7503527",
+                            "Content": "går åt helsike",
+                            "Definition": {
+                                "Content": "misslyckas helt",
+                                "ID": "7503526"
+                            }
+                        },
+                        {
+                            "ID": "7503531",
+                            "Content": "går åt pepparn",
+                            "Definition": {
+                                "Content": "går illa",
+                                "ID": "7503530"
+                            }
+                        },
+                        {
+                            "ID": "7504057",
+                            "Content": "går åt skogen",
+                            "Definition": {
+                                "Content": "misslyckas helt",
+                                "ID": "7504056"
+                            }
+                        },
+                        {
+                            "ID": "5005812",
+                            "Content": "går över styr",
+                            "Definition": {
+                                "Content": "går omkull, slutar illa",
+                                "ID": "5005813"
+                            }
+                        },
+                        {
+                            "ID": "7505664",
+                            "Content": "går över ån efter vatten",
+                            "Definition": {
+                                "Content": "försöker uppnå något på ett onödigt krångligt sätt",
+                                "ID": "7505663"
+                            }
+                        },
+                        {
+                            "ID": "8032751",
+                            "Content": "Helan går!",
+                            "Definition": {
+                                "Content": "Nu dricker vi första supen!",
+                                "ID": "8032752"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "VariantID": "6520",
+                    "ID": "7496",
+                    "Lexemeno": "2",
+                    "Definition": {
+                        "Content": "fungerar; avlöper",
+                        "ID": "9018307"
+                    },
+                    "Example": [
+                        {
+                            "ID": "1053354",
+                            "Content": "Klockan går inte, vi måste dra upp den!"
+                        },
+                        {
+                            "ID": "1053355",
+                            "Content": "Hur gick det på tävlingen? – Det gick bra!"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "ID": "1053353-1",
+                            "Order": "1",
+                            "Content": "ngt går (SÄTT)"
+                        }
+                    ],
+                    "Idioms": [
+                        {
+                            "ID": "2005455",
+                            "Content": "det går ingen nöd på någon",
+                            "Definition": {
+                                "Content": "någon klarar sig fint",
+                                "ID": "2005454"
+                            }
+                        },
+                        {
+                            "ID": "2005793",
+                            "Content": "går på Guds försyn",
+                            "Definition": {
+                                "Content": "går på en slump, går utan kontroll",
+                                "ID": "2005792"
+                            }
+                        },
+                        {
+                            "ID": "5005766",
+                            "Content": "går som en dans",
+                            "Definition": {
+                                "Content": "går lätt och snabbt",
+                                "ID": "7503517"
+                            }
+                        },
+                        {
+                            "ID": "7503235",
+                            "Content": "går som på räls",
+                            "Definition": {
+                                "Content": "går väldigt bra",
+                                "ID": "7503234"
+                            }
+                        },
+                        {
+                            "ID": "8034947",
+                            "Content": "går till väga",
+                            "Definition": {
+                                "Content": "förfar, bär sig åt",
+                                "ID": "8034946"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "VariantID": "6521",
+                    "ID": "7497",
+                    "Lexemeno": "3",
+                    "Definition": {
+                        "Content": "avgår, sätter igång",
+                        "ID": "9018308"
+                    },
+                    "Example": [
+                        {
+                            "ID": "1053360",
+                            "Content": "tåget går klockan 10"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "ID": "1053359-1",
+                            "Order": "1",
+                            "Content": "ngt går TID"
+                        }
+                    ]
+                },
+                {
+                    "VariantID": "6522",
+                    "ID": "7498",
+                    "Lexemeno": "4",
+                    "Definition": {
+                        "Content": "spelas",
+                        "ID": "9018309"
+                    },
+                    "Example": [
+                        {
+                            "ID": "1053363",
+                            "Content": "På vilken biograf går filmen?"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "ID": "8010735-1",
+                            "Order": "1",
+                            "Content": "ngt går PLATS"
+                        }
+                    ]
+                },
+                {
+                    "VariantID": "6523",
+                    "ID": "7499",
+                    "Lexemeno": "5",
+                    "Definition": {
+                        "Content": "får plats, ryms",
+                        "ID": "9018310"
+                    },
+                    "Example": [
+                        {
+                            "ID": "1053367",
+                            "Content": "det går tio liter i dunken"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "ID": "8010736-1",
+                            "Order": "1",
+                            "Content": "det går ngt (i ngt)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

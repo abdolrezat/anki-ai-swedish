@@ -1,0 +1,506 @@
+{
+    "Status": "found",
+    "Wordbase": "LSL4",
+    "Result": [
+        {
+            "Value": "går",
+            "Variant": "2",
+            "Phonetic": [
+                {
+                    "File": "http://lexin.nada.kth.se/sound/v2/176696_1.mp3",
+                    "Content": "gå:r"
+                }
+            ],
+            "Type": "verb",
+            "Inflection": [
+                {
+                    "Spec": "att",
+                    "Form": "infinitiv",
+                    "Content": "gå"
+                },
+                {
+                    "Form": "imperfekt",
+                    "Content": "gick"
+                },
+                {
+                    "Spec": "har",
+                    "Form": "supinum",
+                    "Content": "gått"
+                },
+                {
+                    "Spec": "är",
+                    "Form": "perf.part.",
+                    "Content": "gången"
+                },
+                {
+                    "Spec": "!",
+                    "Form": "imperativ",
+                    "Content": "gå"
+                }
+            ],
+            "Lexeme": [
+                {
+                    "Lexemeno": "1",
+                    "Definition": {
+                        "Content": "förflyttar sig till fots (utan att springa)"
+                    },
+                    "Reference": [
+                        {
+                            "Type": "animation",
+                            "Value": "http://lexin.nada.kth.se/lang/lexinanim/gar.mp4"
+                        },
+                        {
+                            "Type": "animation",
+                            "Value": "http://lexin.nada.kth.se/lang/lexinanim/gar_over_gatan.mp4"
+                        }
+                    ],
+                    "Example": [
+                        {
+                            "Content": "han går 3 kilometer varje dag"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "Order": "1",
+                            "Content": "ngn/ngt går (RIKTNING)"
+                        }
+                    ],
+                    "Cycle": [
+                        {
+                            "CycleID": "2002097",
+                            "Comment": {
+                                "Type": "general",
+                                "Content": "även"
+                            },
+                            "Definition": {
+                                "Content": "avlägsnar sig"
+                            },
+                            "Example": [
+                                {
+                                    "Content": "Klockan är mycket, vi måste gå!"
+                                }
+                            ],
+                            "Graminfo": [
+                                {
+                                    "Order": "1",
+                                    "Content": "ngn går"
+                                }
+                            ]
+                        },
+                        {
+                            "CycleID": "2002101",
+                            "Comment": {
+                                "Type": "general",
+                                "Content": "även abstrakt"
+                            },
+                            "Example": [
+                                {
+                                    "Content": "tiden går fort när man har trevligt"
+                                }
+                            ],
+                            "Graminfo": [
+                                {
+                                    "Order": "1",
+                                    "Content": "ngt går"
+                                }
+                            ]
+                        }
+                    ],
+                    "Idioms": [
+                        {
+                            "Content": "det knallar och går",
+                            "Definition": {
+                                "Content": "det går hyggligt (ofta som svar på frågan \"Hur är det?\")"
+                            }
+                        },
+                        {
+                            "Content": "går av stapeln",
+                            "Definition": {
+                                "Content": "äger rum, börjar"
+                            }
+                        },
+                        {
+                            "Content": "går bakom ryggen på någon",
+                            "Definition": {
+                                "Content": "gör något som någon annan inte vet om"
+                            }
+                        },
+                        {
+                            "Content": "går dit näsan pekar",
+                            "Definition": {
+                                "Content": "går rakt fram"
+                            }
+                        },
+                        {
+                            "Content": "går från klarhet till klarhet",
+                            "Definition": {
+                                "Content": "blir bättre och bättre"
+                            }
+                        },
+                        {
+                            "Content": "går husesyn",
+                            "Definition": {
+                                "Content": "vandrar runt i ett hus (ofta för att kontrollera kvaliteten)"
+                            }
+                        },
+                        {
+                            "Content": "går i arv",
+                            "Definition": {
+                                "Content": "ärvs"
+                            }
+                        },
+                        {
+                            "Content": "går i bräschen för något",
+                            "Definition": {
+                                "Content": "främjar något"
+                            }
+                        },
+                        {
+                            "Content": "går i kras",
+                            "Definition": {
+                                "Content": "går sönder"
+                            }
+                        },
+                        {
+                            "Content": "går i land med (en uppgift)",
+                            "Definition": {
+                                "Content": "klarar (en uppgift)"
+                            }
+                        },
+                        {
+                            "Content": "går i land med (något)",
+                            "Definition": {
+                                "Content": "klarar (något)"
+                            }
+                        },
+                        {
+                            "Content": "går i lås",
+                            "Definition": {
+                                "Content": "lyckas"
+                            }
+                        },
+                        {
+                            "Content": "går i pension",
+                            "Definition": {
+                                "Content": "slutar sitt arbete på grund av ålder (ofta 65 eller 67 år)"
+                            }
+                        },
+                        {
+                            "Content": "går i spetsen",
+                            "Definition": {
+                                "Content": "går först, leder"
+                            }
+                        },
+                        {
+                            "Content": "går i strumplästen",
+                            "Definition": {
+                                "Content": "går i enbart strumpor"
+                            }
+                        },
+                        {
+                            "Content": "går i stöpet",
+                            "Definition": {
+                                "Content": "misslyckas"
+                            }
+                        },
+                        {
+                            "Content": "går i svaromål",
+                            "Definition": {
+                                "Content": "besvarar kritik"
+                            }
+                        },
+                        {
+                            "Content": "går i tusen bitar",
+                            "Definition": {
+                                "Content": "går sönder helt, blir förstörd"
+                            }
+                        },
+                        {
+                            "Content": "går med håven",
+                            "Definition": {
+                                "Content": "visar att man vill ha beröm"
+                            }
+                        },
+                        {
+                            "Content": "går miste om något",
+                            "Definition": {
+                                "Content": "får inte något"
+                            }
+                        },
+                        {
+                            "Content": "går om intet",
+                            "Definition": {
+                                "Content": "går förlorad; blir inte av"
+                            }
+                        },
+                        {
+                            "Content": "går omkull",
+                            "Definition": {
+                                "Content": "upphör att existera, går under"
+                            }
+                        },
+                        {
+                            "Content": "går på djupet med något",
+                            "Definition": {
+                                "Content": "går igenom något grundligt"
+                            }
+                        },
+                        {
+                            "Content": "går på ett ut",
+                            "Definition": {
+                                "Content": "spelar ingen roll, kvittar"
+                            }
+                        },
+                        {
+                            "Content": "går på gatan",
+                            "Definition": {
+                                "Content": "är prostituerad"
+                            }
+                        },
+                        {
+                            "Content": "går på känsla",
+                            "Definition": {
+                                "Content": "använder enbart intuitionen"
+                            }
+                        },
+                        {
+                            "Content": "går på någons linje",
+                            "Definition": {
+                                "Content": "följer någons rekommendationer"
+                            }
+                        },
+                        {
+                            "Content": "går på tok",
+                            "Definition": {
+                                "Content": "misslyckas helt, går illa"
+                            }
+                        },
+                        {
+                            "Content": "går rakt på sak",
+                            "Definition": {
+                                "Content": "är helt uppriktig"
+                            }
+                        },
+                        {
+                            "Content": "går sin gilla gång",
+                            "Definition": {
+                                "Content": "fortgår som vanligt"
+                            }
+                        },
+                        {
+                            "Content": "går snett",
+                            "Definition": {
+                                "Content": "blir fel, misslyckas"
+                            }
+                        },
+                        {
+                            "Content": "går som katten kring het gröt",
+                            "Definition": {
+                                "Content": "vågar inte säga sitt ärende direkt"
+                            }
+                        },
+                        {
+                            "Content": "går sönder",
+                            "Definition": {
+                                "Content": "blir trasig"
+                            }
+                        },
+                        {
+                            "Content": "går till de sälla jaktmarkerna",
+                            "Definition": {
+                                "Content": "dör"
+                            }
+                        },
+                        {
+                            "Content": "går till det sociala",
+                            "Definition": {
+                                "Content": "begär ekonomisk hjälp av samhället"
+                            }
+                        },
+                        {
+                            "Content": "går till fots",
+                            "Definition": {
+                                "Content": "promenerar"
+                            }
+                        },
+                        {
+                            "Content": "går till spillo",
+                            "Definition": {
+                                "Content": "går förlorad"
+                            }
+                        },
+                        {
+                            "Content": "går till storms mot någon/något",
+                            "Definition": {
+                                "Content": "angriper någon/något häftigt"
+                            }
+                        },
+                        {
+                            "Content": "går till ytterligheter",
+                            "Definition": {
+                                "Content": "går för långt, använder extrema metoder"
+                            }
+                        },
+                        {
+                            "Content": "går undan",
+                            "Definition": {
+                                "Content": "går fort"
+                            }
+                        },
+                        {
+                            "Content": "går vidare",
+                            "Definition": {
+                                "Content": "fortsätter"
+                            }
+                        },
+                        {
+                            "Content": "går vilse",
+                            "Definition": {
+                                "Content": "tappar orienteringen, vet inte var man är"
+                            }
+                        },
+                        {
+                            "Content": "går åt helsike",
+                            "Definition": {
+                                "Content": "misslyckas helt"
+                            }
+                        },
+                        {
+                            "Content": "går åt pepparn",
+                            "Definition": {
+                                "Content": "går illa"
+                            }
+                        },
+                        {
+                            "Content": "går åt skogen",
+                            "Definition": {
+                                "Content": "misslyckas helt"
+                            }
+                        },
+                        {
+                            "Content": "går över styr",
+                            "Definition": {
+                                "Content": "går omkull, slutar illa"
+                            }
+                        },
+                        {
+                            "Content": "går över ån efter vatten",
+                            "Definition": {
+                                "Content": "försöker uppnå något på ett onödigt krångligt sätt"
+                            }
+                        },
+                        {
+                            "Content": "Helan går!",
+                            "Definition": {
+                                "Content": "Nu dricker vi första supen!"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Lexemeno": "2",
+                    "Definition": {
+                        "Content": "fungerar; avlöper"
+                    },
+                    "Example": [
+                        {
+                            "Content": "Klockan går inte, vi måste dra upp den!"
+                        },
+                        {
+                            "Content": "Hur gick det på tävlingen? – Det gick bra!"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "Order": "1",
+                            "Content": "ngt går (SÄTT)"
+                        }
+                    ],
+                    "Idioms": [
+                        {
+                            "Content": "det går ingen nöd på någon",
+                            "Definition": {
+                                "Content": "någon klarar sig fint"
+                            }
+                        },
+                        {
+                            "Content": "går på Guds försyn",
+                            "Definition": {
+                                "Content": "går på en slump, går utan kontroll"
+                            }
+                        },
+                        {
+                            "Content": "går som en dans",
+                            "Definition": {
+                                "Content": "går lätt och snabbt"
+                            }
+                        },
+                        {
+                            "Content": "går som på räls",
+                            "Definition": {
+                                "Content": "går väldigt bra"
+                            }
+                        },
+                        {
+                            "Content": "går till väga",
+                            "Definition": {
+                                "Content": "förfar, bär sig åt"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Lexemeno": "3",
+                    "Definition": {
+                        "Content": "avgår, sätter igång"
+                    },
+                    "Example": [
+                        {
+                            "Content": "tåget går klockan 10"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "Order": "1",
+                            "Content": "ngt går TID"
+                        }
+                    ]
+                },
+                {
+                    "Lexemeno": "4",
+                    "Definition": {
+                        "Content": "spelas"
+                    },
+                    "Example": [
+                        {
+                            "Content": "På vilken biograf går filmen?"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "Order": "1",
+                            "Content": "ngt går PLATS"
+                        }
+                    ]
+                },
+                {
+                    "Lexemeno": "5",
+                    "Definition": {
+                        "Content": "får plats, ryms"
+                    },
+                    "Example": [
+                        {
+                            "Content": "det går tio liter i dunken"
+                        }
+                    ],
+                    "Graminfo": [
+                        {
+                            "Order": "1",
+                            "Content": "det går ngt (i ngt)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
