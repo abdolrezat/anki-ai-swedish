@@ -66,7 +66,7 @@ Example output:
 
 ---
 
-## 4. Running the Project
+## 4. Running the Pipeline
 
 The workflow is:
 
