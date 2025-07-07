@@ -3,8 +3,7 @@
 This project automates the creation of Anki cards for Swedish words using freely available tools:
 
 - [Lexin KTH API](https://lexin.nada.kth.se/lexin/)
-- [DeepSeek V3 model](https://huggingface.co/deepseek-ai)
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
+- [Hugging Face Inference API / DeepSeek V3 model](https://huggingface.co/deepseek-ai)
 - [AnkiConnect plugin](https://github.com/FooSoft/anki-connect)
 
 ---
