@@ -6,6 +6,8 @@ import json
 from anki_card import add_anki_card
 import wget
 import argparse
+class AnkiError(Exception):
+    pass
 
 def extract_text_between_tag(text: str, tag_start, tag_end):
     if tag_start in text and tag_end in text:
@@ -34,12 +36,12 @@ def get_audio_link(web_result):
         print(f'Could not get audio files due to error: {e}')
         return []
 
-def main(word):
+def main(word, extra_user_input = None):
     web_result = extract_data_from_json(fetch_word_data(word))
     print('=============== web result ===================')
     print(json.dumps(web_result, indent=4, ensure_ascii=False))
     print('=============== end / web result ===================')
-    chat_response = hf_chat(web_result)
+    chat_response = hf_chat(web_result, extra_user_input)
     audio_links = get_audio_link(web_result)
     audio = []
     if audio_links:
@@ -57,17 +59,27 @@ def main(word):
         "Extra": extract_text_between_tag(chat_response, "<Extra>","</Extra>"),
     }
     print(extracted_card_fields)
-    user_input = input("Add card to Anki? (Y/n): ").strip().lower()
-    if user_input == 'n':
-        print("Exiting without adding the card.")
-        return
-    response = add_anki_card(
-        deck_name="Swedish +",
-        model_name="Basic (and reversed card with media)",
-        fields= extracted_card_fields,
-        tags=["swedish", "auto-generated"],
-        audio = audio,
-    )
+    for _ in range(3):
+        try:
+            user_input = input("Add card to Anki? (Y/n): ").strip().lower()
+            if user_input == 'n':
+                print("Exiting without adding the card.")
+                return
+            response = add_anki_card(
+                deck_name="Swedish +",
+                model_name="Basic (and reversed card with media)",
+                fields=extracted_card_fields,
+                tags=["swedish", "auto-generated"],
+                audio=audio,
+            )
+            if response['error'] is not None:
+                raise AnkiError("Failed to add card to Anki. Possibly Duplicate.")
+            break  # Exit loop if successful
+        except Exception as e:
+            if isinstance(e, AnkiError):
+                print(e)
+            else:
+                print(f"An error occurred when adding the card. Ensure Anki/Anki-connect are running and try again. Error: {e}")
     print(response)
 
 if __name__ == "__main__":
@@ -76,6 +88,13 @@ if __name__ == "__main__":
     # main("träna")
     parser = argparse.ArgumentParser(description="Generate Anki cards for Swedish words.")
     parser.add_argument("word", type=str, help="The Swedish word to process.")
+    parser.add_argument(
+        "extra_input",
+        type=str,
+        nargs="?",
+        default=None,
+        help="Optional extra input to provide additional context."
+    )
     args = parser.parse_args()
 
-    main(args.word)
+    main(args.word, args.extra_input)

@@ -1,4 +1,6 @@
 from huggingface_hub import InferenceClient
+import argparse
+import json
 
 huggingface_models = [
     # Chat / Instruction-following
@@ -41,7 +43,13 @@ huggingface_models = [
 selected_model = huggingface_models[1]
 print("Using model:", selected_model)
 
-def get_prompt(input_json):
+def get_prompt(input_json, extra_user_input=None):
+    input_extra = ''
+    if extra_user_input:
+        input_extra = f"""
+        Ensure that the following sentence / context is included in <Extra>: {extra_user_input}
+        """
+
     system_prompt = f"""
     Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
     Example output: 
@@ -49,17 +57,23 @@ def get_prompt(input_json):
     <Back>lindrig | mild</Back>
     <Extra>(lindrigt, lindriga)<br> Inte allvarlig, obetydlig, lätt<br><br><i>She only suffered minor injuries in the accident.</i><br>hon fick bara lindriga skador vid olyckan</Extra>
 
-    Input json: {input_json}
+    Input json: {input_json} 
+    {input_extra}
     """
     return system_prompt
 
 def hf_chat(
     input_json: str,
+    extra_user_input: str = None,
     verbose: int = 1,
 ) -> str:
     client = InferenceClient()
 
-    system_prompt = get_prompt(input_json=input_json)
+    if input_json is None:
+        system_prompt = extra_user_input
+    else:
+        system_prompt = get_prompt(input_json=input_json, extra_user_input = extra_user_input)
+
     if verbose:
         print("============ SYSTEM PROMPT =========================")
         print(system_prompt)
@@ -75,3 +89,18 @@ def hf_chat(
         print(response)
 
     return response
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run hf_chat with input JSON and optional extra user input.")
+    parser.add_argument("input_json", type=str)
+    parser.add_argument("extra_user_input", type=str, nargs="?", help="Additional user input for the prompt.", default=None)
+
+    args = parser.parse_args()
+
+    # Load JSON from file if input_json is a file path
+    input_json = None if args.input_json == "" else args.input_json
+
+    response = hf_chat(
+        input_json=None,
+        extra_user_input=args.extra_user_input,
+    )
