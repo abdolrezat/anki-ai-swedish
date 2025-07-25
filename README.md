@@ -92,9 +92,11 @@ sudo ln -s <path_to_main.py> /usr/bin/anki-add && sudo chmod +x /usr/bin/anki-ad
 Now you can run the script using:
 
 ```bash
-anki-add <swedish_word>
+anki-add <swedish_word> <extra context>
 ```
 ---
+
+Extra context is optional, it can be e.g. a sentence to include in the flashcard.
 
 ## 🔍 Example Usage
 
