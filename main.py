@@ -43,8 +43,11 @@ def main(word, extra_user_input = None):
         print(json.dumps(web_result, indent=4, ensure_ascii=False))
         print('=============== end / web result ===================')
         audio_links = get_audio_link(web_result)
+        deck_name = "Swedish +"
     else:
         web_result, audio_links = None, None
+        deck_name = "Swedish Adv."
+        
     chat_response = hf_chat(web_result, extra_user_input)
     audio = []
     if audio_links:
@@ -69,7 +72,7 @@ def main(word, extra_user_input = None):
                 print("Exiting without adding the card.")
                 return
             response = add_anki_card(
-                deck_name="Swedish +",
+                deck_name=deck_name,
                 model_name="Basic (and reversed card with media)",
                 fields=extracted_card_fields,
                 tags=["swedish", "auto-generated"],
