@@ -37,12 +37,15 @@ def get_audio_link(web_result):
         return []
 
 def main(word, extra_user_input = None):
-    web_result = extract_data_from_json(fetch_word_data(word))
-    print('=============== web result ===================')
-    print(json.dumps(web_result, indent=4, ensure_ascii=False))
-    print('=============== end / web result ===================')
+    if word != "":
+        web_result = extract_data_from_json(fetch_word_data(word))
+        print('=============== web result ===================')
+        print(json.dumps(web_result, indent=4, ensure_ascii=False))
+        print('=============== end / web result ===================')
+        audio_links = get_audio_link(web_result)
+    else:
+        web_result, audio_links = None, None
     chat_response = hf_chat(web_result, extra_user_input)
-    audio_links = get_audio_link(web_result)
     audio = []
     if audio_links:
         file_names = [x.split('/')[-1] for x in audio_links]

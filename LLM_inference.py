@@ -44,22 +44,38 @@ selected_model = huggingface_models[1]
 print("Using model:", selected_model)
 
 def get_prompt(input_json, extra_user_input=None):
-    input_extra = ''
-    if extra_user_input:
-        input_extra = f"""
-        Ensure that the following sentence / context is included in <Extra>: {extra_user_input}
-        """
-
-    system_prompt = f"""
-    Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
-    Example output: 
-    <Front>mild, minor</Front>
-    <Back>lindrig | mild</Back>
-    <Extra>(lindrigt, lindriga)<br> Inte allvarlig, obetydlig, lätt<br><br><i>She only suffered minor injuries in the accident.</i><br>hon fick bara lindriga skador vid olyckan</Extra>
-
-    Input json: {input_json} 
-    {input_extra}
     """
+    Three modes:
+    1. input_json only: creates flashcard from lexin response
+    2. input_json and extra input: same as 1 but also includes the sentences and context from extra in the flashcard
+    3. only extra input: creates a flashcard for the sentence
+    """
+
+    if input_json:
+        input_extra = f"""
+            Ensure that the following sentence / context is included in <Extra>: {extra_user_input}
+            """  if extra_user_input else ''
+        system_prompt = f"""
+        Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
+        Example output: 
+        <Front>mild, minor</Front>
+        <Back>lindrig | mild</Back>
+        <Extra>(lindrigt, lindriga)<br> Inte allvarlig, obetydlig, lätt<br><br><i>She only suffered minor injuries in the accident.</i><br>hon fick bara lindriga skador vid olyckan</Extra>
+
+        Input json: {input_json} 
+        {input_extra}
+        """
+    elif input_json is None and extra_user_input:
+        system_prompt = f"""
+        Instructions: A context / sentence is provided between tags <sentence>, where user is asking how to say something in everyday Swedish (or is guessing the sentence in Swedish and may need to be corrected for grammatical errors). Generate a concise Anki flash card of the sentence in Swedish and their translation in English. One or two sentences can be added to make it sound like a natural dialogue between two persons (e.g. question and answer). In the field "Extra", we want to have perhaps 1-2 alternatives to the dialogue (as something can be said in different ways) or important grammatical and other info to help user learn better, the Extra field can be left empty if not necessary. Only swedish in Back and English in Front. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words. 
+        Example sentence: when does the next ferry go? 
+        Example output: 
+        <Front><i>- When does the next ferry go?</i> <br><i>- The last one will go 11.</i></Front>
+        <Back>- När går nästa färja? <br>- Den sista går kl. 11:00.</Back>
+        <Extra><br>- Vilken tid avgår nästa färja?<br>- Den sista avgår klockan 11.<br><br><i>- What time does the next ferry depart?<br>- The last one departs at 11.</i><br>- Vilken tid avgår nästa färja?<br>- Den sista avgår klockan 11.</Extra>
+
+        <sentence>{extra_user_input}</sentence>
+        """
     return system_prompt
 
 def hf_chat(
@@ -69,10 +85,7 @@ def hf_chat(
 ) -> str:
     client = InferenceClient()
 
-    if input_json is None:
-        system_prompt = extra_user_input
-    else:
-        system_prompt = get_prompt(input_json=input_json, extra_user_input = extra_user_input)
+    system_prompt = get_prompt(input_json=input_json, extra_user_input = extra_user_input)
 
     if verbose:
         print("============ SYSTEM PROMPT =========================")
