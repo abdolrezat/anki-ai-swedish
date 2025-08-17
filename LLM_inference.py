@@ -56,24 +56,31 @@ def get_prompt(input_json, extra_user_input=None):
             Ensure that the following sentence / context is included in <Extra>: {extra_user_input}
             """  if extra_user_input else ''
         system_prompt = f"""
-        Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
-        Example output: 
+        Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have definition in swedish, example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
+        Example output 1: 
         <Front>mild, minor</Front>
         <Back>lindrig | mild</Back>
         <Extra>(lindrigt, lindriga)<br> Inte allvarlig, obetydlig, lätt<br><br><i>She only suffered minor injuries in the accident.</i><br>hon fick bara lindriga skador vid olyckan</Extra>
-
+        Example output 2:
+        <Front>not care about, ignore</Front>
+        <Back>strunta (i)</Back>
+        <Extra>〈att strunta, struntade, har struntat, är struntande, strunta!〉<br>Bryr sig inte om, låter bli<br><br><i>She ignored washing the windows.</i><br>hon struntade i att tvätta fönstren<br><br><i>We'll just ignore it.</i><br>vi struntar i det</Extra>
+        
         Input json: {input_json} 
         {input_extra}
         """
     elif input_json is None and extra_user_input:
         system_prompt = f"""
-        Instructions: A context / sentence is provided between tags <sentence>, where user is asking how to say something in everyday Swedish (or is guessing the sentence in Swedish and may need to be corrected for grammatical errors). Generate a concise Anki flash card of the sentence in Swedish and their translation in English. If the user input is a single sentence, one or two sentences can be added to make it sound like a natural dialogue between two persons (e.g. question and answer). If the user input is multiple sentences, include all of them in Front and back. In the field "Extra", we want to have perhaps 1-2 alternatives to the dialogue (as something can be said in different ways) or important grammatical and other info to help user learn better, the Extra field can be left empty if not necessary or the alternatives are already provided in multiple sentences. Only swedish in Back and English in Front. Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words. 
+        Instructions: A context / sentence is provided between tags <sentence>, where user may be asking how to say something in everyday Swedish (or is guessing the sentence in Swedish and may need to be corrected for grammatical errors). Generate a concise Anki flash card of the context/sentence in Swedish and their translation in English. If the user input is a single sentence, one or two sentences can be added to make it sound like a natural dialogue between two persons (e.g. question and answer). If the user input is multiple sentences, include all of them in the card, with all english in <Front> and all swedish sentences in <Back>. In the field "Extra", we want to have perhaps 1-2 alternatives to the dialogue (as something can be said in different ways) or important grammatical and other info to help user learn better, the Extra field can be left empty if not necessary or the alternatives are already provided in multiple sentences. Only swedish in Back and English in Front. Only generate one flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words. 
         Example sentence: when does the next ferry go? 
-        Example output: 
+        Example output 1: 
         <Front><i>- When does the next ferry go?</i> <br><i>- The last one will go 11.</i></Front>
         <Back>- När går nästa färja? <br>- Den sista går kl. 11:00.</Back>
         <Extra><br>- Vilken tid avgår nästa färja?<br>- Den sista avgår klockan 11.<br><br><i>- What time does the next ferry depart?<br>- The last one departs at 11.</i><br>- Vilken tid avgår nästa färja?<br>- Den sista avgår klockan 11.</Extra>
-
+        Example output 2:
+        <Front><i>- Are you coming on the bike tour tomorrow?</i> <br><i>- I don’t think I can, I’ve got quite a bit to do.</i> <br><i>- No worries! We’re going anyway.</i> <br><i>- Hope it’s fun!</i> <br><i>- It will be! See you another time.</i></Front>
+        <Back>- Ska du med på cykelturen imorgon? <br>- Jag tror inte jag kan, jag har ganska mycket att göra. <br>- Det är lugnt! Vi kör ändå. <br>- Hoppas det blir kul! <br>- Det blir det! Vi ses en annan gång.</Back>
+        <Extra></Extra>
         <sentence>{extra_user_input}</sentence>
         """
     return system_prompt
