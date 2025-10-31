@@ -6,6 +6,7 @@ import json
 from anki_card import add_anki_card
 import wget
 import argparse
+from config import DECK_NAME_MODE_1_2, DECK_NAME_MODE_3, CARD_MODEL, TAGS
 class AnkiError(Exception):
     pass
 
@@ -43,10 +44,10 @@ def main(word, extra_user_input = None):
         print(json.dumps(web_result, indent=4, ensure_ascii=False))
         print('=============== end / web result ===================')
         audio_links = get_audio_link(web_result)
-        deck_name = "Swedish +"
+        deck_name = DECK_NAME_MODE_1_2
     else:
         web_result, audio_links = None, None
-        deck_name = "Swedish Adv."
+        deck_name = DECK_NAME_MODE_3
         
     chat_response = hf_chat(web_result, extra_user_input)
     audio = []
@@ -73,9 +74,9 @@ def main(word, extra_user_input = None):
                 return
             response = add_anki_card(
                 deck_name=deck_name,
-                model_name="Basic (and reversed card with media)",
+                model_name=CARD_MODEL,
                 fields=extracted_card_fields,
-                tags=["swedish", "auto-generated"],
+                tags=TAGS,
                 audio=audio,
             )
             if response['error'] is not None:

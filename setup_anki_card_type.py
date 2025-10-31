@@ -10,6 +10,7 @@ This card type includes:
 
 import requests
 import json
+from config import CARD_MODEL
 
 
 def create_card_model():
@@ -26,7 +27,7 @@ def create_card_model():
     response = requests.post(url, json=check_payload)
     existing_models = response.json().get("result", [])
     
-    model_name = "Basic (and reversed card with media)"
+    model_name = CARD_MODEL
     
     if model_name in existing_models:
         print(f"✓ Card type '{model_name}' already exists!")
