@@ -17,8 +17,14 @@ git clone https://gitlab.com/rezaT/anki-ai-swedish.git
 cd anki-ai-swedish
 ```
 
+### 2. Install Python Dependencies
 
-## 2. Hugging Face Setup
+```bash
+pip install huggingface_hub requests wget
+```
+---
+
+## 3. Hugging Face Setup
 
 ### a. Install the Hugging Face CLI
 
@@ -32,11 +38,11 @@ pip install huggingface_hub
 huggingface-cli login
 ```
 
-> This will prompt you to paste your Hugging Face token. You can create one for free [here](https://huggingface.co/settings/tokens).
+> This will prompt you to paste your Hugging Face token. You can create one for free [here](https://huggingface.co/settings/tokens) (select "Read" access when creating the token, huggingface-cli command will save the token to ~/.cache/huggingface/token).
 
 ---
 
-## 3. AnkiConnect Plugin Setup
+## 4. AnkiConnect Plugin Setup
 
 ### a. Install Anki
 
@@ -65,7 +71,9 @@ Example output:
 
 ---
 
-## 4. Running the Pipeline
+## 5. Running the Pipeline
+
+> **Important:** Anki needs to be running for the card to be added.
 
 The workflow is:
 
@@ -81,13 +89,15 @@ Run the script:
 python main.py <swedish_word>
 ```
 
-## 5. Create a Symlink for Easy Access
+## 6. Create a Symlink for Easy Access
 
 To make the script accessible from anywhere, create a symbolic link under `/usr/bin`:
 
 ```bash
 sudo ln -s <path_to_main.py> /usr/bin/anki-add && sudo chmod +x /usr/bin/anki-add
 ```
+
+### Running the code:
 
 Now you can run the script using:
 
@@ -115,6 +125,20 @@ Person som programmerar
 Han jobbar som programmerare på ett teknikföretag.
 </Extra>
 ```
+
+### Other Usage Modes
+
+The script supports three modes depending on the input:
+
+1. **Word only**: `anki-add <word>`  
+   Creates a flashcard from the Lexin dictionary definition.
+
+2. **Word + context**: `anki-add <word> "<sentence or context>"`  
+   Creates a flashcard from Lexin and includes your provided sentence/context.
+
+3. **Context only**: `anki-add "" "<sentence or context>"`  
+   Creates a flashcard directly from your sentence without dictionary lookup.
+
 
 ---
 
