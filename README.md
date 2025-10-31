@@ -69,6 +69,19 @@ Example output:
 {"apiVersion": "AnkiConnect v.6"}
 ```
 
+### d. Create Custom Card Type
+
+Run the setup script to create the required card type:
+
+```bash
+python setup_anki_card_type.py
+```
+
+This creates a custom card type with:
+- Fields: Front, Back, Extra, Audio, Video
+- Recognition card (Front → Back) and Production card (Back → Front)
+- Collapsible extra information section
+
 ---
 
 ## 5. Running the Pipeline
