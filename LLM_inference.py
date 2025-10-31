@@ -3,44 +3,27 @@ import argparse
 import json
 
 huggingface_models = [
-    # Chat / Instruction-following
-    "deepseek-ai/DeepSeek-V2-Chat",
-    "deepseek-ai/DeepSeek-V3-0324",
-    # "meta-llama/Llama-3-8b-chat-hf",
-    "meta-llama/Llama-3.1-8B",
-    "facebook/mbart-large-50-many-to-many-mmt",
-    # "meta-llama/Llama-3-70b-chat-hf",
-    "mistralai/Mistral-7B-Instruct-v0.3",
-    "mistralai/Mixtral-8x7B-Instruct-v0.1",
-    "Qwen/Qwen1.5-7B-Chat",
-    "google/gemma-1.1-7b-it"
-    "meta-llama/Llama-2-7b-chat",
-    "meta-llama/Llama-3.1-8B-Instruct",
-    # Text Generation / Summarization
-    "google/flan-t5-small",
-    "google/flan-t5-xl",
-    "facebook/bart-large-cnn",
-    # Translation
-    "Helsinki-NLP/opus-mt-en-fr",
-    "Helsinki-NLP/opus-mt-en-de",
-    # Embeddings / Semantic Search
-    "sentence-transformers/all-MiniLM-L6-v2",
-    "sentence-transformers/all-mpnet-base-v2",
-    "BAAI/bge-base-en-v1.5",
-    "intfloat/e5-base",
-    # Code Models
-    "bigcode/starcoder",
-    "deepseek-ai/DeepSeek-Coder-6.7B-instruct",
-    "WizardLM/WizardCoder-Python-34B-V1.0",
-    # Vision-Language (Multimodal)
-    "Salesforce/blip-image-captioning-base",
-    "openai/clip-vit-base-patch32",
-    # Speech-to-Text (ASR)
-    "openai/whisper-large-v3",
-    "distil-whisper/distil-large-v3.5"
+    # === TIER 1: Best for Swedish + Instruction Following ===
+    "deepseek-ai/DeepSeek-V3",                    # Current best - excellent multilingual including Swedish
+    "Qwen/Qwen2.5-72B-Instruct",                  # Excellent multilingual, very strong instruction following
+    "meta-llama/Llama-3.3-70B-Instruct",          # Latest Llama, good multilingual support
+    "meta-llama/Llama-3.1-70B-Instruct",          # Strong instruction following
+    
+    # === TIER 2: Good alternatives (smaller/faster) ===
+    "Qwen/Qwen2.5-32B-Instruct",                  # Good balance of size and capability
+    "meta-llama/Llama-3.1-8B-Instruct",           # Your current fallback - decent
+    "mistralai/Mistral-Small-Instruct-2409",      # Updated Mistral with good multilingual
+    "mistralai/Mixtral-8x22B-Instruct-v0.1",      # Larger Mixtral, better than 8x7B
+    
+    # === TIER 3: Specialized (if you want to experiment) ===
+    "google/gemma-2-27b-it",                      # Updated Gemma 2
+    "google/gemma-2-9b-it",                       # Smaller Gemma 2
+    "nvidia/Llama-3.1-Nemotron-70B-Instruct",     # Nvidia-tuned for helpfulness
 ]
 
-selected_model = huggingface_models[1]
+selected_model = huggingface_models[0]  # DeepSeek-V3 is excellent choice
+# selected_model = huggingface_models[1]
+
 print("Using model:", selected_model)
 
 def get_prompt(input_json, extra_user_input=None):
