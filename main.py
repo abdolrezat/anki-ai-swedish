@@ -66,6 +66,7 @@ def main(word, extra_user_input = None):
         "Extra": extract_text_between_tag(chat_response, "<Extra>","</Extra>"),
     }
     print(extracted_card_fields)
+    # print("audio fields: ", ''.join([f"[sound:{_file_name}]" for _file_name in file_names]))
     for _ in range(3):
         try:
             user_input = input("Add card to Anki? (Y/n): ").strip().lower()
