@@ -39,7 +39,7 @@ def get_prompt(input_json, extra_user_input=None):
             Ensure that the following sentence / context is included in <Extra>: {extra_user_input}
             """  if extra_user_input else ''
         system_prompt = f"""
-        Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have definition in swedish, example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra, observe the placement of tags used for swedish (<sub>) vs. english (<i>) according to example outputs (Important: <sub> is only for 'Example' field and example sentences, not for Definition.Content and definition that appears in the beginning of extra). Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
+        Instructions: the following json are contents from a dictionary. Generate a concise Anki flash card with the Swedish word and its translations to English, it is possible to include a few synonyms if they are very close in meaning. In the field "Extra", we want to have definition in swedish, example sentences (but not too long paragraphs) with both Swedish and translation, important grammatical and other info to help user learn better, can be left empty if not necessary. Only swedish in Back and English in Front, only one card including all the meanings stated in the input. Keep the front and back lean and include swedish descriptions as well as english (english should come before swedish) in extra, observe the placement of tags used for swedish (<sub>) vs. english (<i>) according to example outputs (Important: <sub> is only for 'Example' field and example sentences, not for Definition.Content and definition that appears in the beginning of extra). Only generate the flash card within the provided tags (Front, Back, Extra) so they are parsed, add simple html to Extra to discern english and swedish words, avoid unnecessary general words (like "English", "Swedish","Inflection:").  for verbs, Extra should include this format 〈att, , har , är, !〉
         Example output 1: 
         <Front>mild, minor</Front>
         <Back>lindrig | mild</Back>
@@ -48,6 +48,14 @@ def get_prompt(input_json, extra_user_input=None):
         <Front>not care about, ignore</Front>
         <Back>strunta (i)</Back>
         <Extra>〈att strunta, struntade, har struntat, är struntande, strunta!〉<br>Bryr sig inte om, låter bli<br><br><i>She ignored washing the windows.</i><br>hon struntade i att tvätta fönstren<br><br><i>We'll just ignore it.</i><br><sub>vi struntar i det</sub></Extra>
+        Example output 3 (nouns, include en/ett):
+        <Front>a spy</Front>
+        <Back>en spion</Back>
+        <Extra>(spionen, spioner, spionerna)<br>  
+        person som ägnar sig åt spioneri<br><br>  
+        <i>The spy got life imprisonment.</i><br>  
+        <sub>spionen fick livstids fängelse</sub><br><br>  
+        </Extra>
         
         Input json: {input_json} 
         {input_extra}
